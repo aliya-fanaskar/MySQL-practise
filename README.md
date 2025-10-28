@@ -2,17 +2,15 @@
 
 This repository documents my SQL basics revision and Advanced concepts learning journey and aims at strengthening my foundational concepts for data analysis and database management.
 
-
----
-
-## Topics Covered
-- Topic 1
-- Topic 
-...
 ---
 
 ## Files Included
-- `file.sql` – *will update*
+The **practise file** folder contains the following files:
+- `1_create_tables.sql`\
+  Creation of 3 tables - ***worker***, ***bonus*** and ***title*** tables connected using Keys
+  
+- `2_basic_queries.sql`\
+  SELECT, LIMIT-OFFSET, ALIASING, WHERE clause, IN, LIKE, DISTINCT, ORDER BY clause, Logical Operators, Text Functions, Mathematical Functions, Date & Time Functions
 
 ---
 
