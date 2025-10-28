@@ -1,2 +1,26 @@
-# MySQL-practise
-My hands-on SQL practice project focused on strengthening core concepts, from basic table setups and simple queries to core functions and clauses. Part of my ongoing journey toward mastering advanced SQL and data analysis. A work-in-progress repository that I'll keep on updating as I practise more.
+# SQL Practice Exercises
+
+This repository documents my SQL basics revision and Advanced concepts learning journey and aims at strengthening my foundational concepts for data analysis and database management.
+
+
+---
+
+## Topics Covered
+- Topic 1
+- Topic 
+...
+---
+
+## Files Included
+- `file.sql` – *will update*
+
+---
+
+## Contributions and Credits
+
+This is mainly my personal learning log, but suggestions and improvements are always welcome! And this learning journey is supported by a variety of resources including:  
+- YouTube tutorials  
+- Online blogs and websites  
+- Self exploration with the help of AI (OpenAI's ChatGPT)
+   
+I’ll update this section with specific links and credits in the near future.
