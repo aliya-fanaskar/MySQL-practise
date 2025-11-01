@@ -1,4 +1,4 @@
-# my SQL practice
+# my SQL revision and practice (MySQL)
 
 This repository documents my SQL basics revision and Advanced concepts learning journey and aims at strengthening my foundational concepts for data analysis and database management.
 
