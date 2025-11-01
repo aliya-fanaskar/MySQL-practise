@@ -35,7 +35,7 @@ INSERT INTO employee (emp_id, first_name, last_name, salary, joining_date, depar
     (016, 'Usha', 'Patel', 500000, '2019-04-11 09:00:00', 'IT', 'Bangalore'),
     (017, 'Raj', 'Prasad', 450000, '2020-06-19 09:00:00', 'Admin', 'Pune'),
     (018, 'Satish', 'Singh', 120000, '2022-06-08 09:00:00', 'Account', 'Pune'),
-    (019, 'Santosh', 'Kumar', 80000, '2024-09-11 09:00:00', 'IT', 'Bangalre'),
+    (019, 'Santosh', 'Kumar', 80000, '2024-09-11 09:00:00', 'IT', 'Bangalore'),
     (020, 'Gita', 'Naik', 400000, '2020-09-22 09:00:00', 'HR', 'Mumbai');
 
 
