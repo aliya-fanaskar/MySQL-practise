@@ -8,7 +8,7 @@ This repository documents my SQL basics revision and Advanced concepts learning 
 The **practise file** folder contains the following files:
  
 1. [**01_create_tables.sql**](https://github.com/aliya-fanaskar/MySQL-practise/blob/main/my-MySQL-practise/01_create_tables.sql)\
-   Creation of 3 tables - ***worker***, ***bonus*** and ***title*** tables connected using Keys
+   Creation of 3 tables - ***employee***, ***bonus*** and ***title*** tables linked to ach other using Keys
    
 2. [**02_basic_queries.sql**](https://github.com/aliya-fanaskar/MySQL-practise/blob/main/my-MySQL-practise/02_basic_queries.sql)\
   SELECT, LIMIT-OFFSET, ALIASING, WHERE clause, Logical Operators, IN, LIKE, Wildcards, DISTINCT, ORDER BY clause
