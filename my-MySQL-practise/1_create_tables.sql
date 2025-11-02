@@ -1,8 +1,21 @@
+/*
+---------------------------------------------------------------------------------------------------------------------------
+Filename       : 01_create_tables.sql
+Level          : Basic
+Focus          :
+ Creation of the following 3 tables with respective columns and linked on the basis of 'employee ID'
+  1. `employee` Table (main table) - emp_id, first_name, last_name, salary, joining_date, department, city
+  2. `bonus` Table - emp_ref_id, bonus_amount, bonus_date
+  3. `title` Table - emp_ref_id, emp_title, affect_from
+---------------------------------------------------------------------------------------------------------------------------
+*/
+
 SHOW DATABASES;                             -- display the list of existing databases
 CREATE DATABASE IF NOT EXISTS company;      -- create a database  (good practise to use 'IF NOT EXISTS' to avoid issues)
 USE company;                                -- select the database
 
 SHOW TABLES;            -- display the list of tables in that database
+
 
 -- --------------------------------------------------------------------------------------------------------
 # Employee details Table
@@ -31,7 +44,7 @@ INSERT INTO employee (emp_id, first_name, last_name, salary, joining_date, depar
 	(011, 'Aman', 'Khan', 75000, '2025-05-20 09:00:00', 'Accounts', 'Bangalore'),
 	(012, 'Monika', 'Dsouza', 200000, '2023-02-01 09:00:00', 'Sales', 'Chennai'),
 	(013, 'Suman', 'Chaudhari', 95000, '2024-05-20 09:00:00', 'IT', 'Pune'),
-	(014, 'John', 'Francis', 80000, '2024-04-22 09:00:00', 'Admin', 'Hyderabad'),
+	(014, 'John', 'Francis', 80000, '2024-04-22 09:00:00', 'Operations', 'Hyderabad'),
 	(015, 'Rajesh', 'Sharma', 200000, '2022-01-11 09:00:00', 'Operations', 'Mumbai'),
 	(016, 'Venkat', 'Iyer', 450000, '2022-09-20 09:00:00', 'Operations', 'Chennai'),
 	(017, 'Raj', 'Prasad', 420000, '2020-06-19 09:00:00', 'Sales', 'Pune'),
@@ -44,13 +57,16 @@ INSERT INTO employee (emp_id, first_name, last_name, salary, joining_date, depar
 	(024, 'Sara', 'Hussain', 95000, '2025-01-20 09:00:00', 'HR', 'Hyderabad'),
 	(025, 'Vipul', 'Nair', 200000, '2023-06-13 09:00:00', 'IT', 'Pune');
 
+
 -- --------------------------------------------------------------------------------------------------------
 # Employee BONUS Table
 CREATE TABLE bonus(
 	emp_ref_id INT,
     bonus_amount INT,
     bonus_date DATETIME,
-    FOREIGN KEY (emp_ref_id) REFERENCES employee(emp_id) ON DELETE CASCADE    
+    FOREIGN KEY (emp_ref_id) REFERENCES employee(emp_id) 
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 );
 
 INSERT INTO bonus (emp_ref_id, bonus_amount, bonus_date) VALUES
@@ -65,13 +81,16 @@ INSERT INTO bonus (emp_ref_id, bonus_amount, bonus_date) VALUES
     (019, 4500, '2025-10-20'),
     (010, 3500, '2025-10-11');
 
+
 -- --------------------------------------------------------------------------------------------------------
 # Employee TITLE Table
 CREATE TABLE title(
 	emp_ref_id INT,
     emp_title CHAR(25),
     affect_from DATETIME,
-    FOREIGN KEY (emp_ref_id) REFERENCES employee(emp_id) ON DELETE CASCADE
+    FOREIGN KEY (emp_ref_id) REFERENCES employee(emp_id) 
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 );
 
 INSERT INTO title (emp_ref_id, emp_title, affect_from) VALUES
@@ -88,20 +107,3 @@ INSERT INTO title (emp_ref_id, emp_title, affect_from) VALUES
     (017, 'Executive', '2025-09-15 00:00:00'),
     (006, 'Manager', '2025-02-01 00:00:00'),
     (003, 'Manager', '2025-09-15 00:00:00');
-
--- --------------------------------------------------------------------------------------------------------
--- view tables
-SHOW TABLES;
-
-SELECT * FROM employee;
-
-SELECT * FROM bonus;
-SELECT * FROM bonus ORDER BY emp_ref_id, bonus_amount;
-
-SELECT * FROM title;
-SELECT * FROM title ORDER BY emp_ref_id;
-
--- details about a certain table
-DESC employee;
-DESC title;
-
