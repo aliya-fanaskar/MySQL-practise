@@ -1,17 +1,17 @@
 /*
 ---------------------------------------------------------------------------------------------------------------------------
-Filename         : 03_text_math_date-time_functions.sql
+Filename         : 03_basic_function_types.sql
 Level            : Intermediate
 Concepts covered :
   1. Text Functions
   2. Numeric Functions
-  3. Aggregate Functions
-  4. Date and Time Fumctions
+  3. Date and Time Fumctions
+  4. Aggregate Functions
 ---------------------------------------------------------------------------------------------------------------------------
 */
 
-
-# TEXT Functions --------------------------------------------------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------------------------------------------------------------------------
+# TEXT Functions - to manipulate textual data
 -- LENGTH(str) - Returns the number of bytes in a string (for most text, same as number of characters)
 SELECT LENGTH('MySQL Practise');
 
@@ -65,8 +65,8 @@ SELECT CONCAT('MySQL', SPACE(3), 'Course');
 SELECT LPAD('7', 3, '0');
 SELECT RPAD('SQL', 6, '!');
 
-
-# NUMERIC Functions --------------------------------------------------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------------------------------------------------------------------------
+# NUMERIC Functions - work with numeric data and=perform arithmetic operations
 
 -- ABS() - Returns the absolute (positive) value of a number
 SELECT ABS(-25);
@@ -76,6 +76,11 @@ SELECT CEIL(4.3);
 
 -- FLOOR(x) - Returns the largest integer less than or equal to x
 SELECT FLOOR(4.7);
+
+-- ROUND(x, d) - Rounds the number x to d decimal places
+SELECT ROUND(3.1253, 2);
+SELECT ROUND(25.5657, 0);
+SELECT ROUND(25.3657, 0);
 
 -- TRUNCATE(x, d) - Truncates a number x to d decimal places without rounding. Unlike ROUND(), it just cuts off digits beyond the specified decimal point
 SELECT TRUNCATE(3.1253, 2);
@@ -99,11 +104,6 @@ SELECT SIGN(-45);
 SELECT SIGN(26);
 SELECT SIGN(0);
 
--- ROUND(x, d) - Rounds the number x to d decimal places
-SELECT ROUND(3.1253, 2);
-SELECT ROUND(25.5657, 0);
-SELECT ROUND(25.3657, 0);
-
 -- RAND() - Generates a random floating-point number between 0 and 1
 SELECT RAND();
 -- Can be combined with ROUND() to generate random integers
@@ -117,13 +117,8 @@ SELECT RAND(10);
 SELECT ROUND(SQRT(POWER(3, 2) + POWER(4, 2)), 2) AS Hypotenuse;
 
 
-# AGGREGATE Functions --------------------------------------------------------------------------------------------------------------------
-/* perform calculations on a set of rows and return a single summary value. 
-typically ignore NULL values, except for COUNT(*)*/
-
-
-
-# DATE and TIME Functions --------------------------------------------------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------------------------------------------------------------------------
+# DATE and TIME Functions - work with dates and timestamps
 
 -- NOW() - Returns the current date and time of the system
 SELECT NOW();
@@ -205,7 +200,28 @@ SELECT UTC_TIME();
 SELECT UTC_TIMESTAMP();
 
 
--- ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------------------------------------------------------------------------
+# AGGREGATE Functions - summarize groups of records i.e. perform calculations on a set of rows and return a single summary value
+
+-- COUNT() - Counts the number of rows or non-NULL values in a specified column
+SELECT COUNT(*) FROM employee;
+SELECT COUNT(DISTINCT(department)) FROM employee;
+
+-- MAX() - Retrieves the maximum value from a specified column
+SELECT MAX(salary) AS highest FROM employee;
+
+-- MIN() - Retrieves the minimum value from a specified column
+SELECT MIN(salary) AS lowest FROM employee;
+
+-- SUM() - Calculates the total sum of values in a numerical column
+SELECT SUM(salary) AS total_salary FROM employee;
+
+-- AVG() - Calculates the average value of a numerical column
+SELECT AVG(salary) AS avg_salary FROM employee;
+SELECT ROUND(AVG(salary), 1) AS avg_salary FROM employee;
+
+
+-- ---------------------------------------------------------------------------------------------------------------------------------------------
 USE company;          -- select the database
 
 SELECT DISTINCT(department), LENGTH(department) AS chars FROM employee ORDER BY chars;
@@ -234,11 +250,6 @@ SELECT REPLACE(first_name, 'a', '@') FROM employee;
 SELECT REPLACE(first_name, 'i', '-!-') FROM employee;
 
 SELECT REVERSE(department) FROM employee LIMIT 5;
-
-SELECT SUM(salary) AS total_salary FROM employee;
-SELECT MAX(salary) AS highest FROM employee;
-SELECT MIN(salary) AS lowest FROM employee;
-SELECT ROUND(AVG(salary), 1) AS avg_salary FROM employee;
 
 SELECT department, SUM(salary) AS HR_cost FROM employee WHERE department = 'HR';
 SELECT city, MAX(salary) AS Mumbai_highest FROM employee WHERE city = 'Mumbai';
