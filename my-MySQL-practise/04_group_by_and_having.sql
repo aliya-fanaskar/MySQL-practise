@@ -1,11 +1,8 @@
 /*
 ---------------------------------------------------------------------------------------------------------------------------
-Filename       : 04_group_by_and_having.sql
-Level          : Intermediate
-Concepts covered :
-  1. Text Functions - 
-  2. Mathematical Functions - 
-  3. Date and Time Fumctions
+Filename         : 04_group_by_and_having.sql
+Level            : Intermediate
+Concepts covered : GROUP BY clause, GROUP_CONCAT function, HAVING clause, handling ties using Subqueries with GROUP BY and HAVING clause
 ---------------------------------------------------------------------------------------------------------------------------
 */
 
@@ -19,6 +16,7 @@ SELECT COUNT(*) AS Mumbai_based_emps FROM employee WHERE city = 'Mumbai';
 -- Display No. of employees in the 'Admin' department.
 SELECT count(*) AS admin_dept_count FROM employee WHERE department = 'Admin';
 
+-- ---------------------------------------------------------------------------------------------------------------------------------------------
 # GROUP BY clause
 /*The GROUP BY clause in SQL is used to group rows that have the 
 same values in one or more specified columns into summary rows. 
@@ -105,8 +103,10 @@ FROM employee
 GROUP BY department, city
 ORDER BY nos, department;
 
+-- ---------------------------------------------------------------------------------------------------------------------------------------------
 # GROUP_CONCAT
-/* function in MySQL is used to combine multiple values from different rows into a single string.
+/* 
+This function in MySQL is used to combine multiple values from different rows into a single string.
 It’s especially useful when summarizing grouped data or displaying related values in one line.
 In short, it concatenates values from a column into a single string, typically used with GROUP BY 
 
@@ -133,7 +133,7 @@ GROUP BY department
 ORDER BY frequency;  -- group by discussed in another file
 
 
--- ------------------------------------------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------------------------------------------------------------------------
 # HAVING
 /* The HAVING clause in SQL is used to filter groups of rows 
 based on a specified condition, typically involving aggregate functions. 
@@ -209,7 +209,7 @@ GROUP BY last_name
 HAVING frequency > 1;
 
 
-
+-- ---------------------------------------------------------------------------------------------------------------------------------------------
 # Handling ties with Subqueries...
 -- Which department has the highest no. of employees?
 SELECT department, COUNT(*) AS nos
