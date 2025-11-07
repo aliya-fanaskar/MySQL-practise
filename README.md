@@ -13,7 +13,7 @@ The **practise file** folder contains the following files:
 2. [**02_basic_queries.sql**](https://github.com/aliya-fanaskar/MySQL-practise/blob/main/my-MySQL-practise/02_basic_queries.sql)\
   SELECT, LIMIT-OFFSET, ALIASING, WHERE clause, Logical Operators, IN, LIKE, Wildcards, DISTINCT, ORDER BY clause
 
-3. [**03_text_math_date-time_functions.sql**](https://github.com/aliya-fanaskar/MySQL-practise/blob/main/my-MySQL-practise/03_basic_function_types.sql)\
+3. [**03_basic_function_types.sql**](https://github.com/aliya-fanaskar/MySQL-practise/blob/main/my-MySQL-practise/03_basic_function_types.sql)\
    Text Functions, Numeric Functions, Aggregate Functions, Date and Time Functions
  
 4. [***work-in-progress***]\
