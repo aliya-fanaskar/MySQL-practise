@@ -15,8 +15,11 @@ The **practise file** folder contains the following files:
 
 3. [**03_basic_function_types.sql**](https://github.com/aliya-fanaskar/MySQL-practise/blob/main/my-MySQL-practise/03_basic_function_types.sql)\
    Text Functions, Numeric Functions, Aggregate Functions, Date and Time Functions
- 
-4. [***work-in-progress***]\
+
+4. [**04_group_by_and_having.sql**](https://github.com/aliya-fanaskar/MySQL-practise/blob/main/my-MySQL-practise/04_group_by_and_having.sql)\
+   GROUP BY clause, GROUP_CONCAT function, HAVING clause, handling ties using Subqueries with GROUP BY and HAVING clause
+  
+5. [***work-in-progress***]\
    ...
    
 ---
