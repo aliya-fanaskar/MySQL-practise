@@ -58,7 +58,7 @@ SELECT * FROM employee WHERE first_name = 'Nikhil';
 SELECT * FROM employee WHERE department = 'HR';
 
 
-# 5 - LOGICAL OPERATORS for multiple conditions (AND, OR, NOT)-----------------------------------------------------------------
+# 5 - Logical Operators for multiple conditions (AND, OR, NOT)-----------------------------------------------------------------
 SELECT * FROM employee WHERE city = 'Bangalore' AND department = 'Account';   -- employees from Bangalore city working in Accounts dept
 SELECT * FROM employee WHERE city = 'Mumbai' OR department = 'IT';            -- employees either from Mumbai city or in IT dept or both
 SELECT * FROM employee WHERE NOT city = 'Pune' AND NOT department  = 'Admin'; -- employees neither from Pune city nor in Admin dept
@@ -78,9 +78,8 @@ SELECT * FROM employee WHERE last_name LIKE 'Kumar';
 SELECT * FROM employee WHERE city NOT LIKE 'Mumbai';
 
 # 8 - Wildcard Characters -----------------------------------------------------------------------------------------------------
-/* SQL wildcards are special characters used with 
-the LIKE operator in the WHERE clause to search for 
-specific patterns within string data in a database.
+/* SQL wildcards are special characters used with the LIKE operator in the 
+WHERE clause to search for specific patterns within string data in a database.
 - '%' (Percent Sign): Represents zero or more characters.
 - '_' (Underscore): Represents a single character.*/
 SELECT * FROM employee WHERE first_name LIKE '%e%';      -- whose name contains 'e' 
