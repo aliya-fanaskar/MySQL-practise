@@ -10,8 +10,10 @@ Concepts covered :
 ---------------------------------------------------------------------------------------------------------------------------
 */
 
+
 -- ---------------------------------------------------------------------------------------------------------------------------------------------
-# TEXT Functions - to manipulate textual data
+# 1 - TEXT Functions - to manipulate textual data
+-- -----------------------------------------------
 -- LENGTH(str) - Returns the number of bytes in a string (for most text, same as number of characters)
 SELECT LENGTH('MySQL Practise');
 
@@ -65,9 +67,10 @@ SELECT CONCAT('MySQL', SPACE(3), 'Course');
 SELECT LPAD('7', 3, '0');
 SELECT RPAD('SQL', 6, '!');
 
--- ---------------------------------------------------------------------------------------------------------------------------------------------
-# NUMERIC Functions - work with numeric data and=perform arithmetic operations
 
+-- ---------------------------------------------------------------------------------------------------------------------------------------------
+# 2 - NUMERIC Functions - work with numeric data and=perform arithmetic operations
+-- --------------------------------------------------------------------------------
 -- ABS() - Returns the absolute (positive) value of a number
 SELECT ABS(-25);
 
@@ -118,8 +121,8 @@ SELECT ROUND(SQRT(POWER(3, 2) + POWER(4, 2)), 2) AS Hypotenuse;
 
 
 -- ---------------------------------------------------------------------------------------------------------------------------------------------
-# DATE and TIME Functions - work with dates and timestamps
-
+# 3 - DATE and TIME Functions - work with dates and timestamps
+-- ------------------------------------------------------------
 -- NOW() - Returns the current date and time of the system
 SELECT NOW();
 
@@ -201,8 +204,8 @@ SELECT UTC_TIMESTAMP();
 
 
 -- ---------------------------------------------------------------------------------------------------------------------------------------------
-# AGGREGATE Functions - summarize groups of records i.e. perform calculations on a set of rows and return a single summary value
-
+# 4 - AGGREGATE Functions - summarize groups of records i.e. perform calculations on a set of rows and return a single summary value
+-- ----------------------------------------------------------------------------------------------------------------------------------
 -- COUNT() - Counts the number of rows or non-NULL values in a specified column
 SELECT COUNT(*) FROM employee;
 SELECT COUNT(DISTINCT(department)) FROM employee;
