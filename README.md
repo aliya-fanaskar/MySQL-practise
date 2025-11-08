@@ -17,7 +17,7 @@ The **practise file** folder contains the following files:
    Text Functions, Numeric Functions, Aggregate Functions, Date and Time Functions
 
 4. [**04_group_by_and_having.sql**](https://github.com/aliya-fanaskar/MySQL-practise/blob/main/my-MySQL-practise/04_group_by_and_having.sql)\
-   GROUP BY clause, GROUP_CONCAT function, HAVING clause, handling ties using Subqueries with GROUP BY and HAVING clause
+   GROUP BY clause, GROUP_CONCAT function, HAVING clause
   
 5. [***work-in-progress***]\
    ...
