@@ -16,9 +16,9 @@ USE company;                                -- select the database
 
 SHOW TABLES;            -- display the list of tables in that database
 
-
 -- --------------------------------------------------------------------------------------------------------
-# Employee details Table
+# TABLE 1 - Employee details Table
+-- ------------------------------
 CREATE TABLE employee(
 	emp_id INT PRIMARY KEY NOT NULL,
     first_name CHAR(25),
@@ -59,7 +59,8 @@ INSERT INTO employee (emp_id, first_name, last_name, salary, joining_date, depar
 
 
 -- --------------------------------------------------------------------------------------------------------
-# Employee BONUS Table
+# TABLE 2 - Employee BONUS Table
+-- ------------------------------
 CREATE TABLE bonus(
 	emp_ref_id INT,
     bonus_amount INT,
@@ -83,7 +84,8 @@ INSERT INTO bonus (emp_ref_id, bonus_amount, bonus_date) VALUES
 
 
 -- --------------------------------------------------------------------------------------------------------
-# Employee TITLE Table
+# TABLE 3 - Employee TITLE Table
+-- ------------------------------
 CREATE TABLE title(
 	emp_ref_id INT,
     emp_title CHAR(25),
