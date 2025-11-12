@@ -3,7 +3,7 @@
 Filename         : 02_basic_queries.sql
 Level            : Basic
 Concepts covered : Basic SELECT, LIMIT-OFFSET, Aliasing, WHERE clause, Logical Operators, 
-                   IN, NOT, IN, LIKE, NOT LIKE, Wildcard Characters, DISTINCT, ORDER BY clause
+                   IN, NOT, IN, DISTINCT, ORDER BY clause, LIKE, NOT LIKE.
 -------------------------------------------------------------------------------------------------------------------------------
 */
 
@@ -73,25 +73,7 @@ SELECT * FROM employee WHERE first_name IN ('Amitabh', 'Rajesh', 'Satish', 'Raj'
 SELECT * FROM employee WHERE first_name NOT IN ('Amitabh', 'Rajesh', 'Satish', 'Raj', 'Gita');
 
 
-# 7 - LIKE, NOT LIKE ----------------------------------------------------------------------------------------------------------
-SELECT * FROM employee WHERE last_name LIKE 'Kumar';
-SELECT * FROM employee WHERE city NOT LIKE 'Mumbai';
-
-# 8 - Wildcard Characters -----------------------------------------------------------------------------------------------------
-/* SQL wildcards are special characters used with the LIKE operator in the 
-WHERE clause to search for specific patterns within string data in a database.
-- '%' (Percent Sign): Represents zero or more characters.
-- '_' (Underscore): Represents a single character.*/
-SELECT * FROM employee WHERE first_name LIKE '%e%';      -- whose name contains 'e' 
-SELECT * FROM employee WHERE first_name LIKE '%a';       -- whose name ends with 'a' 
-SELECT * FROM employee WHERE first_name LIKE '_i%';      -- whose name's second letter is 'i' 
-SELECT * FROM employee WHERE first_name LIKE '_i%l';     -- whose name's second letter is 'i' and ends with 'l'
-SELECT * FROM employee WHERE first_name LIKE '_____l';   -- whose names have 6 letters and ends with 'l' (6 underscores)
-SELECT * FROM employee WHERE last_name LIKE 'S%';        -- whose last name begins with 'S' 
-SELECT * FROM employee WHERE last_name LIKE '_____';     -- whose last name contains 5 characers (5 underscores) 
-
-
-# 9 - DISTINCT ----------------------------------------------------------------------------------------------------------------
+# 7 - DISTINCT ----------------------------------------------------------------------------------------------------------------
 -- Display Unique Department Values
 SELECT DISTINCT department FROM employee;
 
@@ -109,7 +91,7 @@ SELECT COUNT(DISTINCT(department)) AS unique_depts FROM employee;
 SELECT COUNT(DISTINCT last_name) AS unique_lastnames FROM employee;
 
 
-# 10 - ORDER BY clause --------------------------------------------------------------------------------------------------------
+# 8 - ORDER BY clause --------------------------------------------------------------------------------------------------------
 /* used to sort the result set of a SELECT statement based on one or more columns 
 in a specific order, either ascending (ASC) or descending (DESC). Default is ASC*/
 -- order table records by employee first name
@@ -123,3 +105,26 @@ SELECT * FROM employee ORDER BY emp_id DESC LIMIT 1;
 
 -- Display second-last record of the table.
 SELECT * FROM employee ORDER BY emp_id DESC LIMIT 1 OFFSET 1;
+
+
+# 9 - LIKE, NOT LIKE ----------------------------------------------------------------------------------------------------------
+/* The 'LIKE' operator in SQL is used in a WHERE clause to search for a specified string pattern in a column.*/
+SELECT * FROM employee WHERE last_name LIKE 'Kumar';
+SELECT * FROM employee WHERE city NOT LIKE 'Mumbai';
+
+-- Difference between `last_name = 'Kumar'` and `last_name LIKE 'Kumar'`?
+/* In MySQL, the difference between these two when used in a WHERE clause 
+lies primarily in their function and how the database engine processes them:
+
+last_name = 'Kumar'
+This is a standard equality comparison and the most direct way to check for an exact match.
+It tests if the value in the last_name column is exactly equal to the string 'Kumar'
+
+last_name LIKE 'Kumar'
+This is a pattern matching operation.
+It tests if the value in the last_name column matches the specified pattern.
+'LIKE' operator is primarily designed for partial matching using wildcards
+When used without any wildcard characters, as in this example, LIKE 'Kumar' behaves identically to name = 'Kumar'
+
+...Wildcards are discussed in another file dedicated for the topic
+*/
