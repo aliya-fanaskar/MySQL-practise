@@ -11,7 +11,7 @@ The **practise file** folder contains the following files:
    Creation of 3 tables - ***employee***, ***bonus*** and ***title*** tables linked to ach other using Keys
    
 2. [**02_basic_queries.sql**](https://github.com/aliya-fanaskar/MySQL-practise/blob/main/my-MySQL-practise/02_basic_queries.sql)\
-  SELECT, LIMIT-OFFSET, ALIASING, WHERE clause, Logical Operators, IN, LIKE, Wildcards, DISTINCT, ORDER BY clause
+  SELECT, LIMIT-OFFSET, ALIASING, WHERE clause, Logical Operators, IN, DISTINCT, ORDER BY clause, LIKE
 
 3. [**03_basic_function_types.sql**](https://github.com/aliya-fanaskar/MySQL-practise/blob/main/my-MySQL-practise/03_basic_function_types.sql)\
    Text Functions, Numeric Functions, Aggregate Functions, Date and Time Functions
