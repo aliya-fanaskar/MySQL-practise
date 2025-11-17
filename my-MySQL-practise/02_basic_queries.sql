@@ -59,7 +59,7 @@ SELECT * FROM employee WHERE department = 'HR';
 
 
 # 5 - Logical Operators for multiple conditions (AND, OR, NOT)-----------------------------------------------------------------
-SELECT * FROM employee WHERE city = 'Bangalore' AND department = 'Account';   -- employees from Bangalore city working in Accounts dept
+SELECT * FROM employee WHERE city = 'Bangalore' AND department = 'Accounts';   -- employees from Bangalore city working in Accounts dept
 SELECT * FROM employee WHERE city = 'Mumbai' OR department = 'IT';            -- employees either from Mumbai city or in IT dept or both
 SELECT * FROM employee WHERE NOT city = 'Pune' AND NOT department  = 'Admin'; -- employees neither from Pune city nor in Admin dept
 SELECT * FROM employee WHERE department = 'IT' AND salary >= 200000;          -- employees of IT dept with salary more than or equal to 2 Lakhs
@@ -74,16 +74,17 @@ SELECT * FROM employee WHERE first_name NOT IN ('Amitabh', 'Rajesh', 'Satish', '
 
 
 # 7 - DISTINCT ----------------------------------------------------------------------------------------------------------------
+/* return only unique or distinct values from one or more columns, eliminating duplicate rows from the result set.*/ 
 -- Display Unique Department Values
 SELECT DISTINCT department FROM employee;
 
--- Display Unique First Names and their lengths
+-- Display Unique City Values
 SELECT 
-	DISTINCT first_name AS name_of_emp, 
-    LENGTH(first_name) AS chars 
+	DISTINCT city AS name_of_emp
 FROM employee;
 
 -- Counting Distinct departments
+-- the COUNT() function counts the number of rows or non-NULL values in a specified column
 SELECT COUNT(department) AS depts FROM employee;          -- will simply count the no. of rows in the table causing count of repetitions as well
 SELECT COUNT(DISTINCT(department)) AS unique_depts FROM employee;
 
