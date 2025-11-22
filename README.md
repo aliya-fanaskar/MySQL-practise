@@ -18,8 +18,11 @@ The **practise file** folder contains the following files:
 
 4. [**04_group_by_and_having.sql**](https://github.com/aliya-fanaskar/MySQL-practise/blob/main/my-MySQL-practise/04_group_by_and_having.sql)\
    GROUP BY clause, GROUP_CONCAT function, HAVING clause
-  
-5. [***work-in-progress***]\
+
+5. [**05_RegExp.sql**](https://github.com/aliya-fanaskar/MySQL-practise/blob/main/my-MySQL-practise/05_RegExp.sql)\
+   String pattern matching, Wildcards with LIKE operator, REGEXP operator
+   
+6. [***work-in-progress***]\
    ...
    
 ---
